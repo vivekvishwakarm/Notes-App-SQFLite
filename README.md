@@ -1,11 +1,12 @@
 
 # Note SQFLite App
 
-This project is a **Note SQFLite App** developed using Flutter. The app is designed to provide a seamless and intuitive user experience for scheduling and managing doctor appointments. This repository contains all the UI components and screens that comprise the app's design.
+This is a simple **Notes App** built using Flutter. It allows users to create, edit, delete, and search for notes. The app features a clean and modern UI with support for basic CRUD operations on notes.
 
 
 ## Table of Contents
 - [Features](#features)
+- [HowToUse](#HowToUse)
 - [Design Principles](#DesignPrinciples)
 - [Getting Started](#GettingStarted)
 - [Screenshots](#screenshots)
@@ -16,12 +17,19 @@ This project is a **Note SQFLite App** developed using Flutter. The app is desig
 
 ## 📱Features
 
-- **User Authentication Screens:** Includes login and sign-up interfaces with a clean and modern design.
-- **Home Dashboard:** A user-friendly dashboard providing quick access to book clinic or home visits.
-- **Doctor Profiles:** Detailed doctor profiles with reviews, location, and booking options.
-- **Messaging Interface:** Real-time chat UI designed for patient-doctor communication.
-- **Appointment Management:** Screens to view, schedule, reschedule, or cancel appointments.
-- **Settings Page:** Customizable settings for profile management, notifications, and privacy.
+- **Create Note:** Users can add a new note by entering a title and description.
+- **View Notes:** The list of notes is displayed in the home screen with the title and a short description.
+- **Edit Note:** Users can modify an existing note’s title and description.
+- **Delete Note:** Notes can be removed from the list.
+- **Search Notes:** The app provides functionality to search for notes using the title.
+- **Success Notifications:** After adding or editing a note, a success message is displayed.
+
+## How to Use
+
+- Tap the + button to add a new note.
+- Enter the note’s title and description, then press the Add button.
+- To edit or delete a note, tap the three-dot menu next to the note.
+- Use the search icon to find notes by title.
 
 
 ## 🎨 Design Principles
@@ -36,11 +44,11 @@ To run this project locally, clone the repository and follow the steps below:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/vivekvishwakarm/Doctor_Appointment.git
+   git clone https://github.com/yourusername/notes-app.git
    ```
 2. **Navigate to the project directory:**
    ```bash
-   cd Doctor_Appointment
+   cd notes-app
    ```
 3. **Install dependencies:**
    ```bash
@@ -63,6 +71,7 @@ To run this project locally, clone the repository and follow the steps below:
 
 - **Flutter:** The framework used for building the UI.
 - **Dart:** The programming language used in Flutter.
+- **SQFLite:** To store data into locally.
 
 
 ## 🤝 Contributing
