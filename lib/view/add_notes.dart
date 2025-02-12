@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes/db_helper.dart';
-import 'package:notes/model.dart';
-import 'package:notes/notes_screen.dart';
+import 'package:notes/controller/db_helper.dart';
+import 'package:notes/model/model.dart';
 
 class AddNotes extends StatefulWidget {
   const AddNotes({super.key});
@@ -19,7 +18,7 @@ class _AddNotesState extends State<AddNotes> {
 
   @override
   void initState() {
-    dbHelper = DBHelper();
+    dbHelper = DBHelper.getInstance;
     super.initState();
   }
 
@@ -29,6 +28,7 @@ class _AddNotesState extends State<AddNotes> {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
+      //appBar
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.brown,
@@ -43,7 +43,9 @@ class _AddNotesState extends State<AddNotes> {
             children: [
               Container(
                 margin: EdgeInsets.symmetric(
-                    horizontal: width * 0.03, vertical: height * 0.02),
+                  horizontal: width * 0.03,
+                  vertical: height * 0.02,
+                ),
                 height: height * 0.43,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
@@ -93,12 +95,7 @@ class _AddNotesState extends State<AddNotes> {
                       .then((value) {
                     setState(() {
                       noteList = dbHelper!.getNoteList();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const NotesScreen(),
-                        ),
-                      );
+                      Navigator.pop(context);
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text("Note Added"),
@@ -106,7 +103,7 @@ class _AddNotesState extends State<AddNotes> {
                         ),
                       );
                     });
-                  }).onError((error, stackTracker){
+                  }).onError((error, stackTracker) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text("Error"),

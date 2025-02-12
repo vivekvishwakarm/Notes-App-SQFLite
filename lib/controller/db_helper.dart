@@ -1,18 +1,22 @@
-import 'package:notes/model.dart';
+import 'package:notes/model/model.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:io' as io;
 import 'package:path_provider/path_provider.dart';
 
 class DBHelper {
-  static Database? _db;
+
+  DBHelper._();
+  static final DBHelper getInstance = DBHelper._();
+
+  static Database? myDB;
 
   Future<Database> get db async {
-    if (_db != null) {
-      return _db!;
+    if (myDB != null) {
+      return myDB!;
     }
-    _db = await initDatabase();
-    return _db!;
+    myDB = await initDatabase();
+    return myDB!;
   }
 
   initDatabase() async {
