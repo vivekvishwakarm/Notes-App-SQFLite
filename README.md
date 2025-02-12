@@ -1,16 +1,5 @@
-# notes
 
-A new Flutter project.
+# Note App
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Overview
+The Note App is a simple, yet efficient note-taking application built using the Flutter framework. This app provides essential functionality for creating, reading, updating, and deleting (CRUD) notes, along with a powerful search feature. The app leverages SQFLite for local data storage, ensuring that all notes are stored securely on the device, even in offline mode.
